@@ -3,6 +3,9 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
     use:{
         headless: false,
-        screenshot: 'only-on-failure'
+        screenshot: 'only-on-failure',
+        launchOptions: {
+            slowMo: 300
+        }
     }
 })
