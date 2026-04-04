@@ -13,6 +13,11 @@ test('sort by price', async({page}) => {
     //sort product 
     await page.waitForSelector('.product_sort_container')
     await page.locator('.product_sort_container').selectOption('lohi');
+    //validate sort 
+    const pricetext = await page.locator('.inventory_item_price').allTextContents();
+    const prices = pricetext.map(p => parseFloat(p.replace('$', '')))
+    const sortedPrices = [...prices].sort((a,b) => a - b);
+    expect(prices).toEqual(sortedPrices);
 
     const first_item = await page.locator('.inventory_item').first();
     const item_name = await first_item.locator('.inventory_item_name ').innerText();
