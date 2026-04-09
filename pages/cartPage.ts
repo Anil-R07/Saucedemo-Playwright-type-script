@@ -14,4 +14,8 @@ export class CartPage {
         .getByRole('button', { name: 'Remove' })
         .click();
     }
+    async lowestPricedProductValidation(expectedName: string) {
+    const productNames = await this.page.locator('.inventory_item_name').allTextContents();
+    expect(productNames).toContain(expectedName);
+    }
 }
