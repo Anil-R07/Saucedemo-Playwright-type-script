@@ -19,6 +19,13 @@
   },
   "homepage": "https://github.com/Anil-R07/Saucedemo-Playwright-type-script#readme",
   "devDependencies": {
-    "@playwright/test": "^1.59.1"
+    "@playwright/test": "^1.59.1",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "chai": "^6.2.2",
+    "playwright": "^1.59.1",
+    "ts-node": "^10.9.2"
   }
 }
